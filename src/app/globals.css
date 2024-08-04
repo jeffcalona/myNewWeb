@@ -2,26 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+/*Fonts*/
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: var(--font-rubik);
+}
+.nunitoFont {
+  font-family: var(--font-nunito);
+}
+
+/*Text*/
+.textYellow {
+  color: #FFB800
+}
+.text-active:active {
+  color: #FFB800
+}
+
+/*Border*/
+.borderNewYellow {
+  border-color: #FFB800;
+}
+
+/*Background*/
+.bgNewYellow {
+  background-color: #FFB800;
+}
+.bgGradientBlack {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 80%);
+  position: absolute;
+  top: 0;
+}
+.bgGradientBlackHover {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+.bgGradientBlackDesign {
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  position: absolute;
+  bottom: 0;
+}
+
+/*Transition*/
+.newTransition {
+  transition: all .5s ease-in-out;
+}
+
+/*Grid*/
+.gridTemplate {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+/*Skills*/
+.boxSkill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Box Shadow*/
+.inputsShadow {
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
+}
+
+
+@media (max-width: 640px) {
+  .sm\\:text-sm {
+    font-size: 12px;
+  }
 }

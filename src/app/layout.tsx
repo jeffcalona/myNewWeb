@@ -1,7 +1,7 @@
+import Navbar from '@/components/navbar/navbar'
 import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import VerticalScrollBar from '@/components/verticalScrollBar'
+import { rubik, nunito } from '@/app/fonts'
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +15,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <meta charSet='UTF-8' />
+      </head>
+      <body className={`${rubik.variable} ${nunito.variable} bg-black`}>
+        <Navbar />
+        <VerticalScrollBar />
+        {children}
+      </body>
     </html>
   )
 }

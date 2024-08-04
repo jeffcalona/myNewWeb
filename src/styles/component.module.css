@@ -1,0 +1,6 @@
+/*Fonts*/
+.nunitoFont {
+    font-family: var(--font-nunito);
+    font-weight: 700;
+    font-style: italic;
+}
