@@ -6,6 +6,7 @@
 body {
   font-family: var(--font-rubik);
 }
+
 .nunitoFont {
   font-family: var(--font-nunito);
 }
@@ -14,6 +15,7 @@ body {
 .textYellow {
   color: #FFB800
 }
+
 .text-active:active {
   color: #FFB800
 }
@@ -23,10 +25,15 @@ body {
   border-color: #FFB800;
 }
 
+.borderNewYellow:hover {
+  border-color: white;
+}
+
 /*Background*/
 .bgNewYellow {
   background-color: #FFB800;
 }
+
 .bgGradientBlack {
   width: 100%;
   height: 100%;
@@ -34,6 +41,7 @@ body {
   position: absolute;
   top: 0;
 }
+
 .bgGradientBlackHover {
   position: absolute;
   left: 0;
@@ -41,12 +49,37 @@ body {
   width: 200px;
   background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
+
 .bgGradientBlackDesign {
   width: 100%;
   height: 30%;
   background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
   position: absolute;
   bottom: 0;
+}
+
+.bgGradientBlackDesignCard {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 95%)
+}
+
+.bgGradientBlackDesignCard:hover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 99%)
+}
+
+.bgGradientBlackDesignCartOpen {
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 95%);
+  position: absolute;
+  bottom: -1px;
 }
 
 /*Transition*/
@@ -63,15 +96,35 @@ body {
 }
 
 /*Skills*/
-.boxSkill {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 /*Box Shadow*/
 .inputsShadow {
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Spinner Animations */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 4px solid #fff;
+  border-top-color: #FFB800;
+  border-radius: 100%;
+  animation: spin 1s infinite
+}
+
+.spinnerLarge {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #fff;
+  border-top-color: #FFB800;
+  border-radius: 100%;
+  animation: spin 1.5s infinite
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg)
+  }
 }
 
 
@@ -79,4 +132,44 @@ body {
   .sm\\:text-sm {
     font-size: 12px;
   }
+}
+
+@media (max-width: 768px) {
+  .bgGradientBlack {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 98%);
+    position: absolute;
+    top: 0;
+  }
+}
+
+
+
+@keyframes disperse {
+  0% {
+    transform: scale(1) translate(0);
+  }
+
+  100% {
+    transform: scale(1) translate(var(--disperse-x), var(--disperse-y));
+  }
+}
+
+@keyframes cluster {
+  0% {
+    transform: scale(1) translate(var(--disperse-x), var(--disperse-y));
+  }
+
+  100% {
+    transform: scale(1) translate(0);
+  }
+}
+
+.animate-disperse {
+  animation: disperse 0.5s forwards;
+}
+
+.animate-cluster {
+  animation: cluster 0.5s forwards;
 }

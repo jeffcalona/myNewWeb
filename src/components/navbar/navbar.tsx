@@ -5,12 +5,12 @@ import BurgerNavbar from './burgerNavbar'
 
 const Navbar = () => {
     return (
-        <header className='w-full bg-black flex justify-center items-center fixed z-30 py-7 sm:px-14 px-5'>
-            <div className='sm:ml-0 sm:mr-auto sm:order-first order-last ml-auto'>
+        <header className='w-full h-20 md:backdrop-blur-sm flex justify-center items-center fixed z-30 xl:px-20 md:px-5 px-5'>
+            <div className='md:ml-0 md:mr-auto md:order-first order-last ml-auto'>
                 <BurgerNavbar />
             </div>
-            <div className=''>
-                <MainNavbar />
+            <div className='md:block hidden'>
+                <MainNavbar orientation='horizontal' />
             </div>
         </header>
     )
