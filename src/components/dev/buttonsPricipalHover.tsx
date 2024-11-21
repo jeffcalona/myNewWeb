@@ -2,7 +2,7 @@ import Link from "next/link"
 
 interface ButtonsProps {
     hrefCode: string
-    hrefWeb: string
+    hrefWeb: string | null
 }
 
 const ButtonsPrincipalHover: React.FC<ButtonsProps> = ({ hrefCode, hrefWeb }) => {
@@ -12,9 +12,11 @@ const ButtonsPrincipalHover: React.FC<ButtonsProps> = ({ hrefCode, hrefWeb }) =>
                 <Link href={hrefCode} target="_blank" className="borderNewYellow">
                     code
                 </Link>
-                <Link href={hrefWeb} target="_blank" className="borderNewYellow">
-                    web
-                </Link>
+                {hrefWeb && (
+                    <Link href={hrefWeb} target="_blank" className="borderNewYellow hover:bg-slate-900">
+                        web
+                    </Link>
+                )}
             </div>
         </div>
     )

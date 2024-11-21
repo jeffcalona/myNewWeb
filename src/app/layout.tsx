@@ -2,6 +2,8 @@ import Navbar from '@/components/navbar/navbar'
 import './globals.css'
 import VerticalScrollBar from '@/components/verticalScrollBar'
 import { rubik, nunito } from '@/app/fonts'
+import VerticalNavbar from '@/components/navbar/vertival-navbar'
+import { Toaster } from '@/components/ui/toaster'
 
 export const metadata = {
   title: 'Create Next App',
@@ -17,10 +19,13 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta charSet='UTF-8' />
+        <meta name="theme-color" content="#000" />
       </head>
       <body className={`${rubik.variable} ${nunito.variable} bg-black`}>
         <Navbar />
+        <VerticalNavbar />
         <VerticalScrollBar />
+        <Toaster />
         {children}
       </body>
     </html>

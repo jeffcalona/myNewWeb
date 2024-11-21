@@ -12,9 +12,9 @@ const BurgerNavbar = () => {
     return (
         <>
             <button className='mr-auto' onClick={() => { setActiveBurger(true) }}>
-                <HiMenuAlt1 className='text-white w-10 h-10 sm:scale-x-100 scale-x-[-1]' />
+                <HiMenuAlt1 className='text-white w-10 h-10 md:scale-x-100 scale-x-[-1]' />
             </button>
-            <div className={`absolute top-0 bg-black w-screen h-screen py-7 sm:px-14 px-5 newTransition ${activeBurger ? 'sm:left-0 right-0' : 'sm:-left-[100%] -right-[100%]'}`}>
+            <div className={`absolute top-0 bg-black w-screen h-screen py-7 md:px-14 px-5 newTransition ${activeBurger ? 'md:left-0 right-0' : 'md:-left-[110%] -right-[110%]'}`}>
                 <button className="w-full flex sm:justify-start justify-end" onClick={() => { setActiveBurger(false) }}>
                     <FaTimes className='text-white w-10 h-10' />
                 </button>

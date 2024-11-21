@@ -5,19 +5,20 @@ import { useState } from "react"
 
 interface MenuLink {
     isSelected?: (value: boolean) => void
+    orientation: 'horizontal' | 'vertical'
 }
 
 const menuLinks = [
-    {name: 'About'},
-    {name: 'Skills'},
-    {name: 'Dev'},
-    {name: 'Design'},
-    {name: 'Contact'}
+    { name: 'About' },
+    { name: 'Skills' },
+    { name: 'Dev' },
+    { name: 'Design' },
+    { name: 'Contact' }
 ]
 
-const MainNavbar: React.FC<MenuLink> = ({ isSelected }) => {
+const MainNavbar: React.FC<MenuLink> = ({ isSelected, orientation = 'horizontal' }) => {
 
-    const [isActive, setIsActive] = useState('')
+    const [isActive, setIsActive] = useState('About')
 
     const handleSetActive = (to: string) => {
         isSelected ? isSelected(false) : ''
@@ -26,11 +27,11 @@ const MainNavbar: React.FC<MenuLink> = ({ isSelected }) => {
 
     return (
         <nav>
-            <ul className="sm:gap-x-10 gap-x-5 font-normal sm:text-lg text-sm flex">
+            <ul className="gap-x-10 font-normal sm:text-lg flex">
                 {menuLinks.map((menuLink) => {
                     return (
                         <li key={menuLink.name}>
-                            <LinkS to={menuLink.name} onSetActive={handleSetActive} spy={true} smooth={true} duration={800} className={`cursor-pointer ${isActive === menuLink.name ? 'textYellow' : 'text-white'}`} >
+                            <LinkS to={menuLink.name || 'About'} onSetActive={handleSetActive} spy={true} smooth={true} duration={800} className={`cursor-pointer ${isActive === menuLink.name ? 'textYellow' : 'text-white'} ${orientation === 'vertical' && isActive === menuLink.name ? 'opacity-100' : orientation === 'vertical' && isActive !== menuLink.name ? 'opacity-20' : 'opacity-100'}`} >
                                 {menuLink.name}
                             </LinkS>
                         </li>
